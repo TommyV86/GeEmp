@@ -1,7 +1,7 @@
 <?php
-//1
-include_once(__DIR__ . "/../model/Employe.php");
-include_once(__DIR__ . "/affichage_commun.php");
+//1 & 5
+include_once(__DIR__ . '/../model/Employe.php');
+include_once('aff_commun.php');
 
 function afficherResultRechercheEmployes(Employe $employeTrouve)
 {
