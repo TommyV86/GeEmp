@@ -5,6 +5,13 @@ class Employe
 
     private $noemp;
     private $nom;
+    private $prenom;
+    private $noserv;
+    private $sup;
+    private $comm;
+    private $sal;
+    private $emploi;
+    private $embauche;
 
 
 
@@ -44,6 +51,146 @@ class Employe
     public function setNom($nom)
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of noserv
+     */ 
+    public function getNoserv()
+    {
+        return $this->noserv;
+    }
+
+    /**
+     * Set the value of noserv
+     *
+     * @return  self
+     */ 
+    public function setNoserv($noserv)
+    {
+        $this->noserv = $noserv;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of prenom
+     */ 
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set the value of prenom
+     *
+     * @return  self
+     */ 
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of sup
+     */ 
+    public function getSup()
+    {
+        return $this->sup;
+    }
+
+    /**
+     * Set the value of sup
+     *
+     * @return  self
+     */ 
+    public function setSup($sup)
+    {
+        $this->sup = $sup;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of comm
+     */ 
+    public function getComm()
+    {
+        return $this->comm;
+    }
+
+    /**
+     * Set the value of comm
+     *
+     * @return  self
+     */ 
+    public function setComm($comm)
+    {
+        $this->comm = $comm;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of sal
+     */ 
+    public function getSal()
+    {
+        return $this->sal;
+    }
+
+    /**
+     * Set the value of sal
+     *
+     * @return  self
+     */ 
+    public function setSal($sal)
+    {
+        $this->sal = $sal;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of emploi
+     */ 
+    public function getEmploi()
+    {
+        return $this->emploi;
+    }
+
+    /**
+     * Set the value of emploi
+     *
+     * @return  self
+     */ 
+    public function setEmploi($emploi)
+    {
+        $this->emploi = $emploi;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of embauche
+     */ 
+    public function getEmbauche()
+    {
+        return $this->embauche;
+    }
+
+    /**
+     * Set the value of embauche
+     *
+     * @return  self
+     */ 
+    public function setEmbauche($embauche)
+    {
+        $this->embauche = $embauche;
 
         return $this;
     }

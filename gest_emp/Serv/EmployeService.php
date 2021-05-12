@@ -23,4 +23,12 @@ class EmployeService
         $userDAO = new UserDAO();
         $userDAO->inscription($user);
     }
+
+    public function afficherEmp()
+    {
+        $employesDao = new EmployeDAO();
+        $employes = $employesDao->afficherEmp();
+        
+        return $employes;
+    }
 }

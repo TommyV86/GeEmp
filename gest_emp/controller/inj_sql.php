@@ -1,6 +1,7 @@
 <?php
 //2
-include_once(__DIR__ . "/Serv/Serv.php");
+include_once(__DIR__ . "/Serv/EmployeService.php");
+include_once(__DIR__ . "/../view/aff_emp.php");
 
 // Controller
 
@@ -8,7 +9,7 @@ if ($_POST) {
     $employeService = new EmployeService();
     $data = $employeService->serachByNoemp($_POST['noemp']);
 
-    print_r($data);
+    afficherResultRechercheEmployes($data);
 } else {
 
 ?>
