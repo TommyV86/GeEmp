@@ -1,5 +1,5 @@
 <?php
-//3
+//2
 include_once(__DIR__ . "/../model/Employe.php");
 include_once(__DIR__ . "/../dao/EmployeDAO.php");
 
@@ -14,21 +14,21 @@ class EmployeService
         return $employe;
     }
 
-    // Devrait Ãªtre dans UserService
-    public function inscription(User $user): void
-    {
-        $mdpHash = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-        $user->setPassword($mdpHash);
-
-        $userDAO = new UserDAO();
-        $userDAO->inscription($user);
-    }
-
-    public function afficherEmp()
+    public function affEmp()
     {
         $employesDao = new EmployeDAO();
         $employes = $employesDao->afficherEmp();
         
         return $employes;
     }
+    
+    // Devrait Ãªtre dans UserService
+    // public function inscription(User $user): void
+    // {
+    //     $mdpHash = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+    //     $user->setPassword($mdpHash);
+
+    //     $userDAO = new UserDAO();
+    //     $userDAO->inscription($user);
+    // }
 }

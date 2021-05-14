@@ -1,12 +1,13 @@
 <?php
 
-class Users
+class User
 {
     
     protected $id;
     protected $username;
     protected $email;
     protected $hash;
+    protected $password;
     protected $rank;
 
     
@@ -100,6 +101,26 @@ class Users
     }
 
     /**
+     * Get the value of password
+     */ 
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the value of password
+     *
+     * @return  self
+     */ 
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
      * Set the value of rank
      *
      * @return  self
@@ -110,5 +131,4 @@ class Users
 
         return $this;
     }
-    
 }

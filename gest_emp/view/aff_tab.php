@@ -1,5 +1,5 @@
 <?php
-
+//fichier inutile 
 include_once('aff_commun.php');
 
 function afficherTableau(){
