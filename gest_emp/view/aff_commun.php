@@ -13,6 +13,17 @@ function afficherHeadHtml(string $cssPath)
         <link rel="stylesheet" href="<?php echo $cssPath; ?>">
         <title>Document</title>
     </head>
+    <body>
+
+<?php
+}
+
+function affFooterHtml()
+{
+?>
+
+    </body>
+    </html>
 
 <?php
 }

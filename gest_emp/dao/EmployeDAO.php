@@ -5,7 +5,7 @@ include_once(__DIR__."/Common.php");
 
 class EmployeDAO extends Common
 {
-    function serachByNoemp(int $noemp): Employe
+    function searchByNoemp(int $noemp): Employe
     {
         
         $conn = $this->connect();
@@ -18,7 +18,7 @@ class EmployeDAO extends Common
     }
 
     // recupération des données des employés, transforme ces données en objet
-    function afficherEmp() : array
+    function searchEmp() : array
     {
         $conn = $this->connect();
         $res = $conn->query("SELECT * FROM emp2");

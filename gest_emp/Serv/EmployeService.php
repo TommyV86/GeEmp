@@ -6,20 +6,20 @@ include_once(__DIR__ . "/../dao/EmployeDAO.php");
 class EmployeService
 {
 
-    public function serachByNoemp(int $noemp): Employe
+    public function searchByNoemp(int $noemp): Employe
     {
 
         $employeDao = new EmployeDAO();
-        $employe = $employeDao->serachByNoemp($noemp);
+        $employe = $employeDao->searchByNoemp($noemp);
         return $employe;
     }
 
-    public function affEmp()
+    public function srchEmp() : array
     {
         $employesDao = new EmployeDAO();
-        $employes = $employesDao->afficherEmp();
+        $arr_emp = $employesDao->searchEmp();
         
-        return $employes;
+        return $arr_emp;
     }
     
     // Devrait Ãªtre dans UserService
