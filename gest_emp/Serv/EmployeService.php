@@ -22,13 +22,9 @@ class EmployeService
         return $arr_emp;
     }
     
-    // Devrait Ãªtre dans UserService
-    // public function inscription(User $user): void
-    // {
-    //     $mdpHash = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-    //     $user->setPassword($mdpHash);
-
-    //     $userDAO = new UserDAO();
-    //     $userDAO->inscription($user);
-    // }
+    public function update_emp()
+    {
+        $employeDao = new EmployeDAO();
+        return $employeDao->update_emp();
+    }
 }

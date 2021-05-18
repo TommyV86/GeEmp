@@ -37,7 +37,11 @@ function aff_tableau2(array $arr){
             echo "<td>".$emp->getComm()."</td>";
             echo "<td>".$emp->getSal()."</td>";
             echo "<td>".$emp->getNoserv()."</td>";
-            echo "<td><a href=\"?details=".$emp->getNoemp()."\">Details</a></td>";
+            echo "<td>
+                    <a href=\"?details=".$emp->getNoemp()."\">Details</a>
+                    <a href=\"?modify=".$emp->getNoemp()."\">Modify</a>
+                    <a href=\"?delete=".$emp->getNoemp()."\">Delete</a>
+                 </td>";
     
         echo "</tr>";
         
