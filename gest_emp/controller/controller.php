@@ -29,6 +29,13 @@ if(empty($_GET)){
     $up_err = $empService->update_emp();
 
     $content = ($up_err) ? $up_err : "Success update !";
+
+/* DELETE */    
+} elseif($_GET['delete']){
+    $empService = new EmployeService();
+    $del = $empService->delete_emp($_GET['delete']);
+
+    $content = ($del) ? "Success delete !" : "Unsuccess delete ..";
 }
 
 /* FINAL DISPLAY PAGE */

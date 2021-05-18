@@ -63,7 +63,15 @@ class EmployeDAO extends Common
 
         $conn->query("UPDATE emp2 SET ".$postForm." WHERE noemp = ".$_POST['noemp']);
 
-
         return $conn->error;
+    }
+
+    function delete_emp(int $noemp)
+    {
+        $conn = $this->connect();
+        $q = $conn->query("DELETE FROM emp2 WHERE noemp = ".$noemp);
+
+        $conn->close();
+        return $q;
     }
 }

@@ -27,4 +27,10 @@ class EmployeService
         $employeDao = new EmployeDAO();
         return $employeDao->update_emp();
     }
+
+    public function delete_emp(int $noemp)
+    {
+        $employeDao = new EmployeDAO();
+        return $employeDao->delete_emp($noemp);
+    }
 }
