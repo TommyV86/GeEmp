@@ -5,7 +5,7 @@ include_once(__DIR__."/Common.php");
 
 class EmployeDAO extends Common
 {
-    function searchByNoemp(int $noemp): Employe
+    function searchByNoempEmp(int $noemp): Employe
     {
         
         $conn = $this->connect();
@@ -28,7 +28,7 @@ class EmployeDAO extends Common
     }
 
     // recupération des données des employés, transforme ces données en objet
-    function searchEmp() : array
+    function searchEmployees() : array
     {
         $conn = $this->connect();
         $res = $conn->query("SELECT * FROM emp2");
@@ -69,9 +69,30 @@ class EmployeDAO extends Common
     function delete_emp(int $noemp)
     {
         $conn = $this->connect();
-        $q = $conn->query("DELETE FROM emp2 WHERE noemp = ".$noemp);
+        $res = $conn->query("DELETE FROM emp2 WHERE noemp = ".$noemp);
 
         $conn->close();
-        return $q;
+        return ($res) ? "Success delete !" : "Unsuccess delete ..";
+    }
+
+    function add_employee()
+    {
+        $conn = $this->connect();
+
+        $q = "INSERT INTO emp2 VALUES("
+            .$_POST['noemp'].", '"
+            .$_POST['nom']."', '"
+            .$_POST['prenom']."', '"
+            .$_POST['emploi']."', "
+            .$_POST['sup'].", '"
+            .$_POST['embauche']."', "
+            .$_POST['sal'].", "
+            .$_POST['comm'].", "
+            .$_POST['noserv'].", '"
+            .date("Y-m-d")."')";
+        
+        $res = $conn->query($q);
+    
+        return ($res) ? "Success query" : $conn->error;
     }
 }

@@ -28,4 +28,23 @@ function modify_emp(Employe $employee){
 
 <?php
 }
+
+function add_emp(){
+?>
+    <form  method="POST" action="index.php?add_emp=process">
+
+        <input type="number" class="form-control" name="noemp" placeholder="Entrez votre numéro d'employé"> 
+        <input type="text" class="form-control" name="nom" placeholder="Entrez votre nom">
+        <input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom">
+        <input type="text" class="form-control" name="emploi" placeholder="Entrez votre emploi">
+        <input type="text" class="form-control" name="sup" placeholder="Entrez votre supérieur">
+        <input type="date" class="form-control" name="embauche" placeholder="Entrez votre date d'entrée">
+        <input type="number" class="form-control" name="sal" placeholder="Entrez votre salaire">
+        <input type="number" class="form-control" name="comm" placeholder="Entrez votre comm">
+        <input type="number" class="form-control" name="noserv" placeholder="Entrez votre numéro de service">
+        <input type="submit" class="btn btn-success" name="valider" value="valider">
+    </form>
+
+<?php
+}
 ?>

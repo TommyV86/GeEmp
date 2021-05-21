@@ -5,37 +5,45 @@ include_once(__DIR__.'/../view/aff_commun.php');
 include_once(__DIR__.'/../view/aff_actions.php');
 include_once(__DIR__.'/../dao/Common.php');
 
+session_start();
+
 /* HOMEPAGE */
 if(empty($_GET)){
     include_once(__DIR__.'/../view/aff_tableau.php');
     $empService = new EmployeService();
-    $arr_emp = $empService->srchEmp();
-    $content = aff_tableau2($arr_emp);
+    $arr_emp = $empService->srchEmployees();
+    $content = aff_tableau($arr_emp);
 
 /* DETAILS */
 } elseif(!empty($_GET['details'])){
     $empService = new EmployeService();
-    $employee = $empService->searchByNoemp($_GET['details']);
+    $employee = $empService->searchByNoempEmp($_GET['details']);
     $content = aff_details($employee);
     
 /* MODIFY */
-} elseif(!empty($_GET['modify'])){
+} elseif(!empty($_GET['modify_emp'])){
     $empService = new EmployeService();
-    $employee = $empService->searchByNoemp($_GET['modify']);
+    $employee = $empService->searchByNoempEmp($_GET['modify']);
     $content = modify_emp($employee);
 
-} elseif($_POST && $_GET['modify_emp'] == 'process'){
+} elseif($_POST && isset($_GET['modify_emp']) && $_GET['modify_emp'] == 'process'){
     $empService = new EmployeService();
     $up_err = $empService->update_emp();
 
     $content = ($up_err) ? $up_err : "Success update !";
 
 /* DELETE */    
-} elseif($_GET['delete']){
+} elseif(!empty($_GET['delete_emp'])){
     $empService = new EmployeService();
-    $del = $empService->delete_emp($_GET['delete']);
+    $content = $empService->delete_emp($_GET['delete_emp']);
 
-    $content = ($del) ? "Success delete !" : "Unsuccess delete ..";
+    
+/* ADD */
+} elseif($_GET['add_emp'] == 'form'){
+    $content = add_emp(); 
+} elseif($_GET['add_emp'] == 'process'){
+    $empService = new EmployeService();
+    $content = $empService->add_emp();
 }
 
 /* FINAL DISPLAY PAGE */

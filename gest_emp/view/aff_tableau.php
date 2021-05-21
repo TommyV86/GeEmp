@@ -1,13 +1,12 @@
 <?php
 
 
-
-function aff_tableau2(array $arr){
+function aff_tableau(array $arr){
     $count = count($arr);
 ?>
 
     <div class='count'>Counter : <?php echo $count; ?> employees</div>
-
+    <a href="index.php?add_emp=form">Add</a>
     <table>
         <tr>
             <th>noemp</th>
@@ -39,8 +38,8 @@ function aff_tableau2(array $arr){
             echo "<td>".$emp->getNoserv()."</td>";
             echo "<td>
                     <a href=\"?details=".$emp->getNoemp()."\">Details</a>
-                    <a href=\"?modify=".$emp->getNoemp()."\">Modify</a>
-                    <a href=\"?delete=".$emp->getNoemp()."\">Delete</a>
+                    <a href=\"?modify_emp=".$emp->getNoemp()."\">Modify</a>
+                    <a href=\"?delete_emp=".$emp->getNoemp()."\">Delete</a>
                  </td>";
     
         echo "</tr>";
