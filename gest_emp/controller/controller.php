@@ -23,7 +23,7 @@ if(empty($_GET)){
 /* MODIFY */
 } elseif(!empty($_GET['modify_emp'])){
     $empService = new EmployeService();
-    $employee = $empService->searchByNoempEmp($_GET['modify']);
+    $employee = $empService->searchByNoempEmp($_GET['modify']); // plutot $_GET['noemp']?
     $content = modify_emp($employee);
 
 } elseif($_POST && isset($_GET['modify_emp']) && $_GET['modify_emp'] == 'process'){
