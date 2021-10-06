@@ -4,7 +4,7 @@ class Common
 {
     public function connect() : mysqli
     {
-        $conn = new mysqli("127.0.0.1", "root", "", "gest_emp");
+        $conn = new mysqli("");
         if($conn->error){
             $conn = "error connection".$conn->error;
         }
